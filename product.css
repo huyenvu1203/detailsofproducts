@@ -1,0 +1,240 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    width: 100%;
+    height: 100%;
+    background: url("../../../assets/logo/home-background.png") center center /
+        cover no-repeat fixed;
+    inset: 0px;
+}
+.products__wrapper {
+    font: 62.5% "Poppins", sans-serif;
+    margin: 30px;
+}
+.products__brand {
+    width: 100%;
+    height: fit-content;
+    margin-bottom: 20px;
+    font-size: 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.products__brand--logo img {
+    object-fit: cover;
+    height: 100%;
+}
+.products__brand--logo-rollroyce {
+    width: 80px;
+}
+.products__brand--logo-bentley {
+    width: 150px;
+}
+.products__brand--logo-maybach {
+    width: 150px;
+}
+
+.products__brand--logo-porsche {
+    width: 200px;
+}
+.lines__through {
+    display: block;
+    flex: 1;
+    padding: 16px 0;
+    width: 100%;
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+}
+
+.products__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    list-style-type: none;
+    gap: 20px;
+}
+.product__item {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    transition: 0.2s;
+    position: relative;
+    background-color: #fff;
+    border: 1px solid rgba(249, 249, 249, 0.1);
+}
+
+.product__item:hover {
+    transform: translateY(-4px);
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: rgba(0 0 0 / 80%) 0px 40px 58px -16px,
+        rgba(0 0 0/ 72%) 0px 30px 22px -10px;
+    
+}
+.product__item:hover img {
+    scale: 1.05;
+    opacity: 1;
+}
+.product__item--link {
+    display: block;
+    text-decoration: none;
+    color: #000;
+    background: #000;
+    font-size: 2em;
+    background-color: #fff;
+}
+.product__item--img {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.product__item--img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+    transition: 0.4s;
+}
+.product__content {
+    height: 100%;
+    margin: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.product__item--name {
+    font-weight: 500;
+    text-align: center;
+    color: #000;
+    margin-bottom: 20px;
+    text-transform: capitalize;
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2; */
+}
+
+.product__item--price {
+    color: red;
+    font-weight: 600;
+}
+
+.product__item--details,
+.product__item--contact {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+box-icon {
+    margin-right: 4px;
+    position: relative;
+    top: 4px;
+}
+
+.product__item--contact-btn {
+    border: 2px solid var(--btn-bg);
+    transition: 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8em;
+    white-space: nowrap;
+    height: 46px;
+    width: 48%;
+    background: var(--btn-bg);
+}
+
+.product__item--contact {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+}
+
+.product__item--contact-btn:hover {
+    background-color: var(--btn-bg);
+    color: #fff;
+    box-shadow: rgba(0 0 0 / 80%) 0px 40px 58px -16px,
+        rgba(0 0 0/ 72%) 0px 30px 22px -10px;
+}
+.negociation-btn {
+    background-color: var(--btn-bg);
+    color: #fff;
+}
+
+.negociation-btn box-icon {
+    color: #fff;
+}
+
+.negociation-btn:hover {
+    background: #fff;
+    color: #000;
+}
+.product__item--contact-btn i {
+    margin-right: 5px;
+}
+
+/* nocar */
+.nocar {
+    font-size: 1.6em;
+}
+
+.loader__overlay {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loader {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border-top: 2px solid #fff;
+    position: relative;
+    animation: rotate 1.4s linear infinite reverse;
+}
+
+.loader::before {
+    content: "";
+    position: absolute;
+    inset: 4px;
+    border-left: 2px solid #fff;
+    border-radius: 50%;
+    animation: rotate 1s linear infinite reverse;
+}
+
+.loader::after {
+    content: "";
+    position: absolute;
+    inset: 8px;
+    border-right: 2px solid #fff;
+    border-radius: 50%;
+    animation: rotate 1s linear infinite reverse 0.3s;
+}
+
+@keyframes rotate {
+    0% {
+        rotate: 0;
+    }
+    100% {
+        rotate: 360deg;
+    }
+}
